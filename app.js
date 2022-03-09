@@ -1,8 +1,8 @@
 const express = require("express");
-const request = require("request");   //The request module is used to make HTTP calls. It is the simplest way of making HTTP calls in node. js using this request module
+const https = require('https') ;      // to make https request
 
 const bodyParser = require("body-parser");
-const app = express();
+const app = express();                // app is an instance of express
 
 
 

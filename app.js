@@ -4,7 +4,7 @@ const https = require('https') ;      // to make https request
 const bodyParser = require("body-parser");
 
 const app = express();                // app is an instance of express
-app.use(express.static("public"));
+app.use(express.static("public"));    //way to keep all the the static files separate in public folder
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + "/signup.html");

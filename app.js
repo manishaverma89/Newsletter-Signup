@@ -1,4 +1,5 @@
 const express = require("express");
+// const request = require("request");
 const https = require("https"); // to make https request
 
 const bodyParser = require("body-parser");
@@ -38,10 +39,38 @@ app.post("/", function (req, res) {
     ]
   };
 
+<<<<<<< HEAD
   // Turning object "data" to JSON format by passing "data"
   const jsonData = JSON.stringify(data);           //This is what we're going to send to mailchimp
+=======
+  // Turning object "data" to JSON format 
+  const jsonData = JSON.stringify(data);           //This is what we're going to send to Mailchimp
+>>>>>>> httprequest
 
+  
+  //As we want to post data to Mailchimp Server , we will Make "http.request" request to Mailchimp Server
+ 
+  const url = "https://us6.api.mailchimp.com/3.0/lists/ddab5da5b7"
+  const options = {
+     method : "POST",
+     auth : "manisha1:7ffceafcd5295d9ff326257cfffc0e51-us6"        //API Key
+  }
+
+const request =  https.request(url, options, function(response){
+    response.on("data",function(data){
+       console.log(JSON.parse(data));
+    });
+
+  });
+   
+  request.write(jsonData);
+  request.end();
 });
+
+
+
+
+
 
 app.listen(3000, function () {
   console.log("Server started at port 3000");

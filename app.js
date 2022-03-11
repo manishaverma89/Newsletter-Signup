@@ -38,8 +38,8 @@ app.post("/", function (req, res) {
     ]
   };
 
-  // Turning object "data" to JSON format 
-  const jsonData = JSON.stringify(data);           //Passing "data" object
+  // Turning object "data" to JSON format by passing "data"
+  const jsonData = JSON.stringify(data);           //This is what we're going to send to mailchimp
 
 });
 

@@ -39,7 +39,7 @@ app.post("/", function (req, res) {
   };
 
   // Turning object "data" to JSON format 
-  const jsonData = JSON.stringify(data);           //Passing "data" object
+  const jsonData = JSON.stringify(data);           //This is what we're going to send to Mailchimo
 
 });
 
